@@ -1,0 +1,70 @@
+.reservations {
+  min-height: 700px;
+  background-color: #495e57;
+  padding: 1rem;
+}
+.reservations-container {
+  max-width: 830px;
+  margin: auto;
+}
+.reservations-container h1 {
+  font-size: 2.5rem;
+  font-family: "Markazi Text";
+  margin-bottom: 1rem;
+  color: #f4ce14;
+}
+.reservations-container h2 {
+  font-size: 1.5rem;
+  font-family: "Karla";
+  margin-bottom: 2rem;
+  color: #fff;
+}
+.inputs-container1 > label,
+input {
+  display: block;
+}
+label {
+  color: #fff;
+}
+
+input {
+  margin: 5px 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+}
+.inputs-container1 {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.reservations-party {
+  width: 50px;
+}
+.reservations-time {
+  width: 130px;
+  margin: 5px 0;
+  padding: 1rem 8px;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+}
+.inputs-container2 > label,
+select {
+  display: block;
+}
+.select-occasion,
+.select-seating {
+  width: 218px;
+  height: 60px;
+  margin: 5px 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+}
+.inputs-container2 {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}

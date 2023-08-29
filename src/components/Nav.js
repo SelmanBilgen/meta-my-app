@@ -1,30 +1,34 @@
 import React from "react";
-import Logo from "../assets/Logo.svg";
+import Logo from "../assets/Logo.png";
+import { Link } from "react-router-dom";
+import "./Nav.css";
 
 const Nav = () => {
   return (
     <nav>
-      <img src={Logo} alt="logo"></img>
-      <ul>
-        <a href="\">
-          <li>Home</li>
-        </a>
-        <a href="\">
-          <li>About</li>
-        </a>
-        <a href="\">
-          <li>Menu</li>
-        </a>
-        <a href="\">
-          <li>Reservations</li>
-        </a>
-        <a href="\">
-          <li>Order Online</li>
-        </a>
-        <a href="\">
-          <li>Login</li>
-        </a>
-      </ul>
+      <div className="nav-frame">
+        <img src={Logo} alt="logo"></img>
+        <ul className="nav-ul">
+          <Link className="nav" to="/">
+            <li className="nav-ul">Home</li>
+          </Link>
+          <Link to="/about">
+            <li>About</li>
+          </Link>
+          <Link to="/menu">
+            <li>Menu</li>
+          </Link>
+          <Link to="/reservations">
+            <li>Reservations</li>
+          </Link>
+          <Link to="/order-online">
+            <li>Order Online</li>
+          </Link>
+          <Link to="/Login">
+            <li>Login</li>
+          </Link>
+        </ul>
+      </div>
     </nav>
   );
 };

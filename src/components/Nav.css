@@ -1,0 +1,49 @@
+nav {
+  background-color: #fff;
+}
+.nav-frame {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 830px;
+  min-height: 100px;
+  margin: auto;
+}
+.nav-frame > img {
+  width: 190px;
+}
+.nav-ul {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  font-family: "Karla";
+  font-size: 1.2rem;
+  font-weight: 700;
+  list-style: none;
+  text-decoration: none;
+}
+
+.nav-ul > a {
+  font-family: "Karla";
+  font-size: 1.2rem;
+  font-weight: 700;
+  list-style: none;
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-ul > a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #f4ce14;
+  transition: width 0.3s;
+}
+
+.nav-ul > a:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}

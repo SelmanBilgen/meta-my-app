@@ -1,0 +1,58 @@
+.lemon-container {
+  background-color: #495e57;
+  min-height: 600px;
+  padding: 60px;
+}
+.little-lemon {
+  display: flex;
+  justify-content: space-between;
+  max-width: 830px;
+  width: 100%;
+  margin: auto;
+}
+.lemon {
+  max-width: 350px;
+  margin: 0;
+}
+.lemon > h1 {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  font-family: "Markazi Text";
+  color: #f4ce14;
+}
+.lemon > h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-family: "Markazi Text";
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.lemon > p {
+  font-size: 1.3rem;
+  font-family: "Karla";
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: 500;
+}
+.rest-images {
+  margin: 0;
+  margin-top: 55px;
+  position: relative;
+}
+.mario {
+  position: relative;
+  z-index: 0;
+  top: 0;
+  right: 0;
+}
+.rest1 {
+  position: absolute;
+  z-index: 1;
+  top: 120px;
+  right: 160px;
+}
+.yellow-line {
+  height: 3px;
+  background-color: #fff;
+}
