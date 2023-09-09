@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 import food from "../assets/restaurantfood-1.png";
 
 const Header = () => {
@@ -14,7 +15,9 @@ const Header = () => {
             Street in Chicago, Illionis. We focus on traditional recipes served
             with a modern twist.
           </p>
-          <button>Reserve a Table</button>
+          <Link to="/reservations">
+            <button>Reserve a Table</button>
+          </Link>
         </article>
         <img src={food} alt="restaurant food" />
       </div>

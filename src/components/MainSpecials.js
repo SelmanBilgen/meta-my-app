@@ -1,5 +1,6 @@
 import React from "react";
 import "./Main.css";
+import { Link } from "react-router-dom";
 import greekSalad from "../assets/greek salad-1.png";
 import bruchetta from "../assets/bruchetta-1.png";
 import lemonDessert from "../assets/lemon dessert-1.png";
@@ -11,7 +12,9 @@ const MainSpecials = () => {
       <section className="specials">
         <div className="main-header">
           <h1 className="specials-title">Specials</h1>
-          <button className="online-menu-btn">Online Menu</button>
+          <Link to="/menu">
+            <button className="online-menu-btn">Online Menu</button>
+          </Link>
         </div>
         <div className="food-cards">
           <div className="food-card1">

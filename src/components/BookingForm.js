@@ -1,88 +1,93 @@
-import React from "react";
-import "../pages/Reservations.css";
+import React, { useState } from "react";
+import "./Booking.css";
+import FindTable from "./FindTable";
+import ContactInfo from "./ContactInfo";
+import Confirmation from "./Confirmation";
+import { useNavigate } from "react-router-dom";
 
-function BookingForm({ value, onChange }) {
+function BookingForm({
+  value,
+  values,
+  handleChange,
+  myDate,
+  availableTimes,
+  handleDateChange,
+  handleSubmit,
+  handleCheckbox,
+}) {
+  const [page, setPage] = useState(0);
+  const formTitle = ["Find a Table", "Contact Information", "Confirmation"];
+
+  const pageHandle = () => {
+    if (page === 0) {
+      return (
+        <FindTable
+          values={values}
+          value={value}
+          handleChange={handleChange}
+          myDate={myDate}
+          availableTimes={availableTimes}
+          handleDateChange={handleDateChange}
+          handleSubmit={handleSubmit}
+        />
+      );
+    } else if (page === 1) {
+      return (
+        <ContactInfo
+          value={value}
+          handleChange={handleChange}
+          handleCheckbox={handleCheckbox}
+        />
+      );
+    } else if (page === 2) {
+      return <Confirmation value={value} values={values} />;
+    }
+  };
+  const navigate = useNavigate();
+
+  const navigateHome = () => {
+    // 👇️ navigate to /
+    navigate("/");
+  };
   return (
-    <div className="reservations">
-      <div className="reservations-container">
-        <h1>Find a Table</h1>
-        <h2>Select date and party</h2>
-        <div className="inputs-container1">
-          <div className="party-input">
-            <label>
-              Party
-              <input
-                name="party"
-                id="party"
-                type="number"
-                value={value.party}
-                onChange={onChange}
-                className="reservations-party"
-              />
-            </label>
-          </div>
-          <div className="date-input">
-            <label>
-              Date
-              <input
-                name="date"
-                id="date"
-                type="date"
-                value={value.date}
-                onChange={onChange}
-                className="reservations-date"
-              />
-            </label>
-          </div>
-
-          <div className="time-input">
-            <label>
-              Time
-              <select
-                name="time"
-                className="reservations-time"
-                value={value.time}
-                onChange={onChange}
+    <div className="form">
+      <div className="progress-bar"></div>
+      <div className="reservations">
+        <div className="reservations-container">
+          <h1>{formTitle[page]}</h1>
+          <div className="form-body">{pageHandle()}</div>
+          {page === 2 ? (
+            <div className="form-footer-done">
+              <button className="form-btn" onClick={navigateHome}>
+                Done
+              </button>
+            </div>
+          ) : (
+            <div className="form-footer">
+              <button
+                className="form-btn"
+                disabled={page === 0}
+                onClick={() => setPage((currentPage) => currentPage - 1)}
               >
-                Time
-                <option value="19:00">7:00 PM</option>
-                <option value="19:30">7:30 PM</option>
-                <option value="20:00">8:00 PM</option>
-                <option value="20:30">8:30 PM</option>
-                <option value="21:00">9:00 PM</option>
-                <option value="21:30">9:30 PM</option>
-                <option value="22:00">10:00 PM</option>
-              </select>
-            </label>
-          </div>
-        </div>
-        <div className="inputs-container2">
-          <label>
-            Occasion
-            <select
-              name="occasion"
-              className="select-occasion"
-              value={value.occasion}
-              onChange={onChange}
-            >
-              <option value="anniversary">Anniversary</option>
-              <option value="birthday">Birthday</option>
-              <option value="engagement">Engagement</option>
-              <option value="other">Other</option>
-            </select>
-          </label>
-          <label>
-            Seating
-            <select
-              name="seating"
-              className="select-seating"
-              value={value.seating}
-              onChange={onChange}
-            >
-              <option value="indoor">Indoor</option>
-              <option value="outdoor">Outdoor</option>
-            </select>
-          </label>
+                Previous
+              </button>
+              <button
+                className="form-btn"
+                onClick={() => {
+                  if (page === formTitle.length - 2) {
+                    // alert("Form Submitted");
+                    console.log(values);
+
+                    setPage((currentPage) => currentPage + 1);
+                  } else {
+                    setPage((currentPage) => currentPage + 1);
+                  }
+                }}
+              >
+                {page === formTitle.length - 2 ? "Submit" : "Next"}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

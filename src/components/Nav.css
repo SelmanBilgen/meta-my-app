@@ -9,15 +9,15 @@ nav {
   min-height: 100px;
   margin: auto;
 }
-.nav-frame > img {
+/* .nav-frame > img {
   width: 190px;
-}
+} */
 .nav-ul {
   margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 35px;
+  gap: 1rem;
   font-family: "Karla";
   font-size: 1.2rem;
   font-weight: 700;
