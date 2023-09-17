@@ -40,15 +40,14 @@ function BookingForm({
         />
       );
     } else if (page === 2) {
-      return <Confirmation value={value} values={values} />;
+      return <Confirmation values={values} />;
     }
   };
   const navigate = useNavigate();
+  function navigateHome() {
+    return navigate("/");
+  }
 
-  const navigateHome = () => {
-    // 👇️ navigate to /
-    navigate("/");
-  };
   return (
     <div className="form">
       <div className="progress-bar"></div>
@@ -75,9 +74,6 @@ function BookingForm({
                 className="form-btn"
                 onClick={() => {
                   if (page === formTitle.length - 2) {
-                    // alert("Form Submitted");
-                    console.log(values);
-
                     setPage((currentPage) => currentPage + 1);
                   } else {
                     setPage((currentPage) => currentPage + 1);

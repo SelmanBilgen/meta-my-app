@@ -3,25 +3,30 @@ import "./Booking.css";
 import { useState } from "react";
 import BookingForm from "./BookingForm";
 import { useReducer } from "react";
-import { fetchAPI, submitAPI } from "./fakeAPI";
-import { useNavigate } from "react-router-dom";
-import pages from "../pages/pages";
+import { fetchAPI } from "./fakeAPI";
 
-const updateTimes = (availableTimes, date) => {
-  const response = fetchAPI();
-  return response.length !== 0 ? response : availableTimes;
+const updateTimes = (availableTimes, action) => {
+  const newTimes = fetchAPI();
+  switch (action.type) {
+    case "new_times":
+      return newTimes;
+    default:
+      return availableTimes;
+  }
 };
 
-const initializeTimes = () => [...fetchAPI()];
+// console.log(response);
+// return response.length !== 0 ? response : availableTimes;
+
+//const initializeTimes = () => [...fetchAPI()];
+const initializeTimes = () => ["21:00", "21:30", "22:00", "22:30", "23:00"];
 
 const BookingMain = () => {
-  const [availableTimes, dispatchOnDateChange] = useReducer(
+  const [availableTimes, dispatch] = useReducer(
     updateTimes,
     [],
     initializeTimes
   );
-
-  const navigate = useNavigate();
 
   //Current date function
   // function getCurrentDate(separator = "-") {
@@ -34,14 +39,6 @@ const BookingMain = () => {
   //   }${separator}${date}`;
   // }
   const myDate = new Date().toISOString().split("T")[0];
-
-  //Current time function
-  // function getCurrentTime(separator = ":") {
-  //   let newDate = new Date();
-  //   let hours = newDate.getHours();
-  //   let minutes = newDate.getMinutes();
-  //   return `${hours}${separator}${minutes < 10 ? `0${minutes}` : `${minutes}`}`;
-  // }
 
   //Form's state
   const [values, setValues] = useState({
@@ -68,11 +65,7 @@ const BookingMain = () => {
 
   const handleDateChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
-    dispatchOnDateChange({ [e.target.name]: e.target.value });
-  };
-  const submitData = (formData) => {
-    const response = submitAPI(formData);
-    if (response) navigate(pages.get("confirmedBooking").path);
+    dispatch({ type: "new_times" });
   };
 
   const handleSubmit = (e) => {
@@ -86,8 +79,6 @@ const BookingMain = () => {
       value={values}
       handleChange={handleChange}
       availableTimes={availableTimes}
-      dispatchOnDateChange={dispatchOnDateChange}
-      submitData={submitData}
       myDate={myDate}
       handleDateChange={handleDateChange}
       handleSubmit={handleSubmit}

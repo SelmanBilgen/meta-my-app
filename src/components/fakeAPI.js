@@ -25,7 +25,5 @@ const fetchAPI = () => {
   availableTimes.push(timesArray[randomNumbers[4]]);
   return availableTimes;
 };
-console.log(fetchAPI());
-const submitAPI = (formData) => true;
 
-export { fetchAPI, submitAPI };
+export { fetchAPI };

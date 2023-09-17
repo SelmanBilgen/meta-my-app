@@ -9,28 +9,26 @@ import Login from "../pages/Login";
 
 const RoutesAll = () => {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />}>
-          Home
-        </Route>
-        <Route path="/about" element={<About />}>
-          About
-        </Route>
-        <Route path="/menu" element={<Menu />}>
-          Menu
-        </Route>
-        <Route path="/order-online" element={<OrderOnline />}>
-          OrderOnline
-        </Route>
-        <Route path="/reservations" element={<Reservations />}>
-          Reservations
-        </Route>
-        <Route path="/login" element={<Login />}>
-          Login
-        </Route>
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />}>
+        Home
+      </Route>
+      <Route path="/about" element={<About />}>
+        About
+      </Route>
+      <Route path="/menu" element={<Menu />}>
+        Menu
+      </Route>
+      <Route path="/order-online" element={<OrderOnline />}>
+        OrderOnline
+      </Route>
+      <Route path="/reservations" element={<Reservations />}>
+        Reservations
+      </Route>
+      <Route path="/login" element={<Login />}>
+        Login
+      </Route>
+    </Routes>
   );
 };
 

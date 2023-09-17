@@ -36,6 +36,7 @@ function ContactInfo({ value, handleChange, handleCheckbox }) {
               id="email"
               value={value.email}
               onChange={handleChange}
+              autoComplete="on"
             />
           </label>
         </div>
@@ -49,11 +50,12 @@ function ContactInfo({ value, handleChange, handleCheckbox }) {
               placeholder="(123) 456-7890"
               value={value.phone}
               onChange={handleChange}
+              autoComplete="on"
             />
           </label>
         </div>
         <div className="textarea-container">
-          <label htmlFor="special-request" className="special-request-label">
+          <label htmlFor="request" className="special-request-label">
             Add special request (optional)
           </label>
           <textarea
@@ -74,7 +76,7 @@ function ContactInfo({ value, handleChange, handleCheckbox }) {
             value={value.policy}
             onChange={handleCheckbox}
           />
-          <label htmlFor="reservation-policy">
+          <label htmlFor="policy">
             I agree with the Little Lemon’s Reservation Policy.
           </label>
         </div>

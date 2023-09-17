@@ -1,11 +1,10 @@
 import React from "react";
 import "./Booking.css";
 
-function ContactInfo({
-  values,
+function FindTable({
   value,
   handleChange,
-  myDate,
+  //myDate,
   availableTimes,
   handleDateChange,
   handleSubmit,
@@ -40,7 +39,7 @@ function ContactInfo({
                 value={value.date}
                 onChange={handleDateChange}
                 className="reservations-date"
-                min={myDate}
+                min={new Date().toJSON().slice(0, 10)}
                 required={true}
               />
             </label>
@@ -57,7 +56,7 @@ function ContactInfo({
               >
                 Time
                 {availableTimes.map((times) => (
-                  <option key={times} value={times}>
+                  <option data-testid="time-option" key={times} value={times}>
                     {times}
                   </option>
                 ))}
@@ -98,14 +97,13 @@ function ContactInfo({
         <h2>Your Reservation Summary</h2>
         <p
           className="reservation-summary"
-          style={{ textTransform: "uppercase" }}
+          style={{ fontSize: "1.2rem", marginBottom: "1rem" }}
         >
           {" - "}
-          {"Party Of "}
+          {"Party of "}
           {value.party}
-
-          <br />
-          <br />
+        </p>
+        <p style={{ textTransform: "capitalize", color: "white" }}>
           {" - "}
           {new Date(value.date).toDateString()}
           <br />
@@ -123,12 +121,10 @@ function ContactInfo({
           <br />
           {" - "}
           {value.seating}
-          <br />
-          <br />
         </p>
       </div>
     </form>
   );
 }
 
-export default ContactInfo;
+export default FindTable;
