@@ -1,11 +1,11 @@
 /* Specials */
 .specials-container {
   margin: 0;
-  min-height: 500px;
-  padding: 150px 0;
+
+  padding: 5rem 0;
 }
 .specials {
-  max-width: 830px;
+  max-width: 50rem;
   margin: auto;
 }
 .main-header {
@@ -16,12 +16,12 @@
 .online-menu-btn {
   margin: 0;
   background-color: #f4ce14;
-  min-height: 4rem;
-  min-width: 15rem;
+  min-height: 3rem;
+  min-width: 12rem;
   margin-top: 1rem;
   border: none;
   border-radius: 1rem;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 .online-menu-btn:hover {
@@ -32,9 +32,10 @@
 .specials-title {
   margin: 0;
   color: #000;
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: "Markazi Text";
   font-weight: 700;
+  padding: 1rem;
 }
 
 .food-card1 {
@@ -43,6 +44,8 @@
   height: 432px;
   border-radius: 1rem 1rem 0 0;
   background: #efeded;
+  margin: auto;
+  margin-bottom: 1rem;
 }
 
 .card-article {
@@ -60,7 +63,8 @@
 }
 .card-h1 {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-family: "Markazi Text";
 }
 .card-h2 {
   margin: 0;
@@ -70,11 +74,13 @@
 .card-p1 {
   margin: 1rem;
   font-size: 1rem;
+  font-family: "Karla";
 }
 .card-p2 {
   font-size: 1rem;
   font-weight: 700;
   margin: 0;
+  font-family: "Markazi Text";
 }
 .moped {
   margin: 0;
@@ -95,30 +101,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 /* Testimonials */
 
 .testimonials-container {
   background-color: #495e57;
-  min-height: 500px;
   padding: 60px;
 }
 .testimonials {
-  max-width: 830px;
+  max-width: 50rem;
   margin: auto;
 }
 .testimonials-title {
   margin: 0;
   color: #f4ce14;
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: "Markazi Text";
-  font-weight: 700;
+  font-weight: 600;
 }
 .rating-card-container {
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
 }
 .rating-card {
   margin: 0;
@@ -127,6 +134,7 @@
   background-color: #f4eae7;
   border-radius: 1rem;
   padding: 1rem;
+  margin-bottom: 1rem;
 }
 .rating {
   display: block;
@@ -140,6 +148,9 @@
   font-family: "Karla";
   margin-bottom: 1rem;
 }
+.profile-pic-name h1 {
+  padding-left: 1rem;
+}
 .profile-pic {
   width: 60px;
   height: 60px;
@@ -150,17 +161,15 @@
   font-size: 1rem;
 }
 
+/* About page */ /*  */
+
 .lemon-container {
   background-color: #fff;
   min-height: 600px;
+  max-width: 80rem;
   padding: 60px;
 }
-.little-lemon {
-  display: flex;
-  justify-content: space-between;
-  max-width: 830px;
-  width: 100%;
-}
+
 .lemon {
   max-width: 350px;
   margin: 0;
@@ -195,4 +204,22 @@
   z-index: 1;
   top: 120px;
   right: 160px;
+}
+
+@media (max-width: 905px) {
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin: auto;
+  }
+  .specials-title {
+    margin-left: 2rem;
+  }
+  .online-menu-btn {
+    margin: 0;
+    margin-left: 2.5rem;
+  }
 }

@@ -1,10 +1,10 @@
 .reservations {
-  min-height: 720px;
+  min-height: 770px;
   background-color: #495e57;
   padding-top: 1rem;
 }
 .reservations-container {
-  max-width: 830px;
+  max-width: 50rem;
   margin: auto;
 }
 .reservations-container h1 {
@@ -31,6 +31,7 @@ label {
 input {
   margin: 5px 0;
   padding: 1rem;
+  font-family: "Karla";
   border-radius: 0.5rem;
   font-size: 1.2rem;
 }
@@ -90,7 +91,7 @@ select {
 .form-footer {
   display: flex;
   justify-content: flex-start;
-  max-width: 830px;
+  max-width: 80rem;
   gap: 0.5rem;
 }
 .reservation-summary {
@@ -98,7 +99,7 @@ select {
   color: #fff;
   font-family: "Karla";
   font-size: 1rem;
-  font-weight: 500;
+
   margin-bottom: 2.4rem;
 }
 
@@ -112,6 +113,8 @@ select {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: calc(100% - 45px);
+  max-width: 500px;
 }
 .policy-input-container {
   display: flex;
@@ -142,4 +145,66 @@ select {
   font-size: 1rem;
   font-family: "Karla";
   color: #fff;
+}
+span {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  max-width: 300px;
+  display: none;
+}
+p {
+  font-family: "Karla";
+}
+
+input:invalid[focused="true"] {
+  border: 3px solid red;
+}
+
+input:invalid[focused="true"] ~ span {
+  display: block;
+}
+#request {
+  width: 100%;
+}
+
+@media (max-width: 850px) {
+  .reservations-container,
+  .reservations-container h1,
+  .form-footer,
+  .contact-name-container,
+  .phone-number-container,
+  .email-container,
+  .policy-input-container,
+  .textarea-container {
+    margin-left: 1rem;
+  }
+
+  .inputs-container1,
+  .inputs-container2,
+  .contact-name-container {
+    flex-wrap: wrap;
+  }
+
+  /* .textarea-container {
+    width: calc(100% - 45px);
+    max-width: 500px;
+  } */
+}
+@media (max-width: 515px) {
+  .form-btn {
+    background-color: #f4ce14;
+    min-height: 3rem;
+    min-width: 10rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+@media (max-width: 485px) {
+  .reservations {
+    min-height: 850px;
+  }
 }

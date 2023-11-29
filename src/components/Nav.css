@@ -5,8 +5,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 830px;
-  min-height: 100px;
+  max-width: 50rem;
+  min-height: 4rem;
   margin: auto;
 }
 /* .nav-frame > img {
@@ -19,16 +19,17 @@ nav {
   align-items: center;
   gap: 1rem;
   font-family: "Karla";
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 550;
   list-style: none;
   text-decoration: none;
+  text-shadow: 1px 1px 2px rgb(146, 143, 143);
 }
 
 .nav-ul > a {
   font-family: "Karla";
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 550;
   list-style: none;
   text-decoration: none;
   color: #000;
@@ -37,8 +38,9 @@ nav {
 .nav-ul > a::after {
   content: "";
   display: block;
-  width: 0;
-  height: 3px;
+  width: 0px;
+  height: 2px;
+  border-radius: 1px;
   background: #f4ce14;
   transition: width 0.3s;
 }
@@ -46,4 +48,58 @@ nav {
 .nav-ul > a:hover::after {
   width: 100%;
   transition: width 0.3s;
+}
+
+.nav-logo {
+  width: 150px;
+}
+@media (min-width: 850px) {
+  .burgerContainer {
+    display: none;
+  }
+}
+@media (max-width: 850px) {
+  .normal {
+    display: none;
+  }
+
+  .nav-ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0px;
+    padding: 1rem;
+    margin-top: 1rem;
+    align-items: center;
+    gap: 1rem;
+    font-family: "Karla";
+    font-size: 1rem;
+    font-weight: 550;
+    list-style: none;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgb(146, 143, 143);
+    background-color: white;
+  }
+  .nav-ul > a::after {
+    content: " ";
+    display: block;
+    width: 0px;
+    height: 2px;
+    border-radius: 0px;
+    background: #f4ce14;
+    transition: width 0.3s;
+  }
+
+  .nav-ul > a:hover::after {
+    width: 100%;
+    transition: width 0.3s;
+  }
+
+  .nav-logo {
+    padding-left: 1rem;
+    width: 150px;
+  }
+  .faIcon {
+    padding-right: 1rem;
+  }
 }

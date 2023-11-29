@@ -34,7 +34,6 @@ const About = () => {
           </div>
         </article>
       </div>
-      <div className="yellow-line"></div>
     </>
   );
 };

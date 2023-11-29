@@ -14,9 +14,38 @@ function BookingForm({
   handleDateChange,
   handleSubmit,
   handleCheckbox,
+  val,
 }) {
   const [page, setPage] = useState(0);
   const formTitle = ["Find a Table", "Contact Information", "Confirmation"];
+
+  const [focused, setFocused] = useState({
+    firstName: false,
+    lastName: false,
+    email: false,
+    phone: false,
+    policy: true,
+  });
+
+  const handleFocus = (e) => {
+    setFocused({ ...focused, [e.target.name]: true });
+  };
+
+  const handleFocusCheckbox = (e) => {
+    setFocused({ ...focused, [e.target.name]: e.target.checked });
+  };
+
+  // const [val, setVal] = useState({
+  //   firstName: false,
+  //   lastName: false,
+  //   email: false,
+  //   phone: false,
+  // });
+
+  // const handleVal = (e) => {
+  //   setVal({ ...val, [e.target.name]: e.target.validity.valid });
+  //   console.log(e.target.validity.valid);
+  // };
 
   const pageHandle = () => {
     if (page === 0) {
@@ -37,6 +66,9 @@ function BookingForm({
           value={value}
           handleChange={handleChange}
           handleCheckbox={handleCheckbox}
+          focused={focused}
+          handleFocus={handleFocus}
+          handleFocusCheckbox={handleFocusCheckbox}
         />
       );
     } else if (page === 2) {
@@ -50,7 +82,7 @@ function BookingForm({
 
   return (
     <div className="form">
-      <div className="progress-bar"></div>
+      {/* <div className="progress-bar"></div> */}
       <div className="reservations">
         <div className="reservations-container">
           <h1>{formTitle[page]}</h1>
@@ -79,6 +111,14 @@ function BookingForm({
                     setPage((currentPage) => currentPage + 1);
                   }
                 }}
+                disabled={
+                  page === 1 &&
+                  (val.firstName === false) |
+                    (val.lastName === false) |
+                    (val.email === false) |
+                    (val.phone === false) |
+                    (value.policy === false)
+                }
               >
                 {page === formTitle.length - 2 ? "Submit" : "Next"}
               </button>

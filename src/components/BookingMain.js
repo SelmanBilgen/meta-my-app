@@ -14,11 +14,6 @@ const updateTimes = (availableTimes, action) => {
       return availableTimes;
   }
 };
-
-// console.log(response);
-// return response.length !== 0 ? response : availableTimes;
-
-//const initializeTimes = () => [...fetchAPI()];
 const initializeTimes = () => ["21:00", "21:30", "22:00", "22:30", "23:00"];
 
 const BookingMain = () => {
@@ -27,17 +22,6 @@ const BookingMain = () => {
     [],
     initializeTimes
   );
-
-  //Current date function
-  // function getCurrentDate(separator = "-") {
-  //   let newDate = new Date();
-  //   let date = newDate.getDate();
-  //   let month = newDate.getMonth() + 1;
-  //   let year = newDate.getFullYear();
-  //   return `${year}${separator}${
-  //     month < 10 ? `0${month}` : `${month}`
-  //   }${separator}${date}`;
-  // }
   const myDate = new Date().toISOString().split("T")[0];
 
   //Form's state
@@ -52,11 +36,19 @@ const BookingMain = () => {
     email: "",
     phone: "",
     request: "",
-    policy: false,
+    policy: true,
+  });
+
+  const [val, setVal] = useState({
+    firstName: false,
+    lastName: false,
+    email: false,
+    phone: false,
   });
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
+    setVal({ ...val, [e.target.name]: e.target.validity.valid });
   };
 
   const handleCheckbox = (e) => {
@@ -83,6 +75,7 @@ const BookingMain = () => {
       handleDateChange={handleDateChange}
       handleSubmit={handleSubmit}
       handleCheckbox={handleCheckbox}
+      val={val}
     />
   );
 };

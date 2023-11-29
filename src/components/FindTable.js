@@ -9,6 +9,10 @@ function FindTable({
   handleDateChange,
   handleSubmit,
 }) {
+  const today = new Date(value.date);
+  const correctedDate = new Date(today);
+  correctedDate.setDate(today.getDate() + 1);
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="reservations-container">
@@ -97,7 +101,7 @@ function FindTable({
         <h2>Your Reservation Summary</h2>
         <p
           className="reservation-summary"
-          style={{ fontSize: "1.2rem", marginBottom: "1rem" }}
+          style={{ fontSize: "1rem", marginBottom: "1rem" }}
         >
           {" - "}
           {"Party of "}
@@ -105,7 +109,7 @@ function FindTable({
         </p>
         <p style={{ textTransform: "capitalize", color: "white" }}>
           {" - "}
-          {new Date(value.date).toDateString()}
+          {new Date(correctedDate).toDateString()}
           <br />
           <br />
 
