@@ -12,12 +12,13 @@
   margin: 0;
   max-width: 138px;
   max-height: 134px;
+  padding: 1.5rem;
 }
 .footer-nav-ul {
   padding: 0;
 }
 .footer-nav-ul > a {
-  font-family: "Karla";
+  font-family: 'Karla';
   font-size: 1rem;
   font-weight: 500;
   list-style: none;
@@ -31,14 +32,14 @@
 .footer-contact > h1,
 .footer-socials > h1 {
   font-size: 1.5rem;
-  font-family: "Markazi Text";
+  font-family: 'Markazi Text';
   font-weight: 600;
   color: #000;
 }
 .footer-contact > p,
 .footer-socials > p {
   color: #000;
-  font-family: "Karla";
+  font-family: 'Karla';
   font-size: 1rem;
   font-weight: 500;
 }
@@ -66,7 +67,9 @@
   margin: 0;
   padding: 1.5rem;
 }
-
+.footer-nav {
+  padding: 1.5rem;
+}
 @media (max-width: 850px) {
   .footer-container {
     display: flex;
