@@ -1,27 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-const Navlinks = ({ setMobile }) => {
-  const closeMenu = () => {
-    setMobile((current) => !current);
-  };
+const Navlinks = ({ handleCheckboxBurger }) => {
   return (
-    <ul className="nav-ul" onClick={closeMenu}>
-      <Link className="nav" to="/">
+    <ul className='nav-ul' onClick={handleCheckboxBurger}>
+      <Link className='nav' to='/'>
         <li>Home</li>
       </Link>
-      <Link to="/about">
+      <Link to='/about'>
         <li>About</li>
       </Link>
-      <Link to="/menu">
+      <Link to='/menu'>
         <li>Menu</li>
       </Link>
-      <Link to="/reservations">
+      <Link to='/reservations'>
         <li>Reservations</li>
       </Link>
-      <Link to="/order-online">
+      <Link to='/order-online'>
         <li>Order Online</li>
       </Link>
-      <Link to="/Login">
+      <Link to='/Login'>
         <li>Login</li>
       </Link>
     </ul>

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import Logo from "../assets/Logo.png";
-import { Link } from "react-router-dom";
-import "./Nav.css";
-import Navlinks from "./NavLinks";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import Logo from '../assets/Logo.png';
+import { Link } from 'react-router-dom';
+import './Nav.css';
+import Navlinks from './NavLinks';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Nav = () => {
   const [mobile, setMobile] = useState(true);
@@ -15,33 +15,33 @@ const Nav = () => {
   };
   return (
     <nav>
-      <div className="nav-frame">
-        <Link className="nav" to="/">
-          <img className="nav-logo" src={Logo} alt="logo"></img>
+      <div className='nav-frame'>
+        <Link className='nav' to='/'>
+          <img className='nav-logo' src={Logo} alt='logo'></img>
         </Link>
-        <div className="normal">
+        <div className='normal'>
           <Navlinks />
         </div>
-        <div className="burgerContainer">
+        <div className='burgerContainer'>
           {mobile ? (
             <FontAwesomeIcon
-              className="faIcon"
+              className='faIcon'
               icon={faBars}
-              style={{ color: "black", cursor: "pointer" }}
+              style={{ color: 'black', cursor: 'pointer' }}
               onClick={handleCheckboxBurger}
-              size="xl"
+              size='xl'
             />
           ) : (
             <>
               <FontAwesomeIcon
-                className="faIcon"
+                className='faIcon'
                 icon={faTimes}
-                style={{ color: "black", cursor: "pointer" }}
+                style={{ color: 'black', cursor: 'pointer' }}
                 onClick={handleCheckboxBurger}
-                size="xl"
+                size='xl'
               />
-              <div className="burger">
-                <Navlinks mobile={mobile} setMobile={setMobile} />
+              <div className='burger'>
+                <Navlinks handleCheckboxBurger={handleCheckboxBurger} />
               </div>
             </>
           )}
