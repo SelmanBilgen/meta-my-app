@@ -1,12 +1,12 @@
-import React from "react";
-import "./Header.css";
-import { Link } from "react-router-dom";
-import food from "../assets/restaurantfood-1.png";
+import React from 'react';
+import './Header.css';
+import { Link } from 'react-router-dom';
+import food from '../../assets/restaurantfood-1.png';
 
 const Header = () => {
   return (
-    <div className="header">
-      <div className="header-container">
+    <div className='header'>
+      <div className='header-container'>
         <article>
           <h1>Little Lemon</h1>
           <h2>Chicago</h2>
@@ -15,11 +15,11 @@ const Header = () => {
             Street in Chicago, Illionis. We focus on traditional recipes served
             with a modern twist.
           </p>
-          <Link to="/reservations">
+          <Link to='/reservations'>
             <button>Reserve a Table</button>
           </Link>
         </article>
-        <img src={food} alt="restaurant food" />
+        <img src={food} alt='restaurant food' />
       </div>
     </div>
   );

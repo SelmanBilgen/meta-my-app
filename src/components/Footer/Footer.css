@@ -3,7 +3,7 @@
   margin: auto;
 }
 .footer {
-  padding: 70px;
+  /* padding: 70px; */
   margin: 0;
   max-height: 300px;
   background-color: #fff;
@@ -76,15 +76,20 @@
     flex-wrap: wrap;
     justify-content: first baseline;
   }
-  section.footer-nav {
-    padding: 1.5rem;
-  }
 }
 
 @media (max-width: 600px) {
+  .footer-nav,
+  .footer-contact,
+  .footer-logo,
+  .footer-socials {
+    margin: auto;
+    margin-left: 3rem;
+    padding: 0;
+  }
   .footer-container {
     display: flex;
     flex-direction: column;
-    justify-content: first baseline;
+    justify-content: left;
   }
 }

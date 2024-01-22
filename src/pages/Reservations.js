@@ -1,7 +1,6 @@
-import React from "react";
-import "../components/Booking.css";
-import BookingMain from "../components/BookingMain";
-//import { BrowserRouter as Router } from "react-router-dom";
+import React from 'react';
+import '../components/BookingForm/Booking.css';
+import BookingMain from '../components/BookingForm/BookingMain';
 
 const Reservations = () => {
   return <BookingMain />;

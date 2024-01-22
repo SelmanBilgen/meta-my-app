@@ -1,46 +1,30 @@
-import React from "react";
-import "./Booking.css";
+import React, { useState } from 'react';
+import '../Booking.css';
 
 function ContactInfo({
-  value,
+  values,
   handleChange,
   handleCheckbox,
   focused,
   handleFocus,
   handleFocusCheckbox,
-  handleVal,
 }) {
-  // const handleFocusCheckbox = (e) => {
-  //   setFocused({ ...focused, [e.target.name]: e.target.checked });
-  // };
-
-  // const [focused, setFocused] = useState({
-  //   firstName: false,
-  //   lastName: false,
-  //   email: false,
-  //   phone: false,
-  //   policy: false,
-  //   all: false,
-  // });
-
-  // const handleFocus = (e) => {
-  //   setFocused({ ...focused, [e.target.name]: true });
-  // };
   return (
-    <div className="contact-info">
-      <div className="contact-info-container">
-        <div className="contact-name-container">
+    <div className='contact-info'>
+      <div className='contact-info-container'>
+        <div className='contact-name-container'>
           <label>
             First name
             <input
-              type="text"
-              name="firstName"
-              id="firstName"
-              value={value.firstName}
+              data-testid='first-name'
+              type='text'
+              name='firstName'
+              id='firstName'
+              value={values.firstName}
               onChange={handleChange}
               onBlur={handleFocus}
               focused={focused.firstName.toString()}
-              pattern="^[A-Za-z0-9]{3,16}$"
+              pattern='^[A-Za-z0-9]{3,16}$'
               required={true}
             />
             <span>
@@ -52,14 +36,14 @@ function ContactInfo({
           <label>
             Last name
             <input
-              type="text"
-              name="lastName"
-              id="lastName"
-              value={value.lastName}
+              type='text'
+              name='lastName'
+              id='lastName'
+              value={values.lastName}
               onChange={handleChange}
               onBlur={handleFocus}
               focused={focused.lastName.toString()}
-              pattern="^[A-Za-z0-9]{3,16}$"
+              pattern='^[A-Za-z0-9]{3,16}$'
               required={true}
             />
             <span>
@@ -68,75 +52,76 @@ function ContactInfo({
             </span>
           </label>
         </div>
-        <div className="email-container">
+        <div className='email-container'>
           <label>
             Email
             <input
-              type="email"
-              name="email"
-              id="email"
-              value={value.email}
+              type='email'
+              name='email'
+              id='email'
+              className='email'
+              value={values.email}
               onChange={handleChange}
               onBlur={handleFocus}
               focused={focused.email.toString()}
-              autoComplete="on"
+              autoComplete='on'
               required={true}
             />
             <span>Email should be a valid email address.</span>
           </label>
         </div>
-        <div className="phone-number-container">
+        <div className='phone-number-container'>
           <label>
             Phone number
             <input
-              type="tel"
-              name="phone"
-              id="phone"
-              placeholder="123-456-7890"
-              value={value.phone}
+              type='tel'
+              name='phone'
+              id='phone'
+              placeholder='123-456-7890'
+              value={values.phone}
               onChange={handleChange}
               onBlur={handleFocus}
               focused={focused.phone.toString()}
-              autoComplete="on"
-              pattern="^(?!123-456-7890)[0-9]{3}-[0-9]{3}-[0-9]{4}$"
+              autoComplete='on'
+              pattern='^(?!123-456-7890)[0-9]{3}-[0-9]{3}-[0-9]{4}$'
               required={true}
             />
             <span>Phone number should match the format!</span>
           </label>
         </div>
-        <div className="textarea-container">
-          <label htmlFor="request" className="special-request-label">
+        <div className='textarea-container'>
+          <label htmlFor='request' className='special-request-label'>
             Add special request (optional)
           </label>
           <textarea
-            name="request"
-            id="request"
-            rows="4"
-            value={value.request}
+            name='request'
+            id='request'
+            rows='4'
+            value={values.request}
             onChange={handleChange}
           ></textarea>
         </div>
-        <div className="policy-input-container">
+        <div className='policy-input-container'>
           <input
-            className="policy-checkbox"
-            type="checkbox"
-            name="policy"
-            id="policy"
-            value={value.policy}
+            className='policy-checkbox'
+            type='checkbox'
+            name='policy'
+            id='policy'
+            value={values.policy}
             onChange={handleCheckbox}
             onBlur={handleFocusCheckbox}
             focused={focused.policy.toString()}
             pattern="$('div.checkbox-group.required :checkbox:checked').length > 0"
             required={true}
-            checked={value.policy}
+            checked={values.policy}
           />
 
-          <label htmlFor="policy">
+          <label htmlFor='policy'>
             I agree with the Little Lemon’s Reservation Policy.
           </label>
         </div>
-        {!value.policy ? (
-          <p style={{ color: "red" }}>
+        {!values.policy ? (
+          <p style={{ color: 'red' }}>
             Little Lemon’s Reservation Policy should be checked.
           </p>
         ) : (

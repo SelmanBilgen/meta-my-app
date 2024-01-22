@@ -1,14 +1,17 @@
+//The API that was provided by Meta didn't work,
+// so I wrote this to simulate an API
+
 const fetchAPI = () => {
   let timesArray = [
-    "19:00",
-    "19:30",
-    "20:00",
-    "20:30",
-    "21:00",
-    "21:30",
-    "22:00",
-    "22:30",
-    "23:00",
+    '19:00',
+    '19:30',
+    '20:00',
+    '20:30',
+    '21:00',
+    '21:30',
+    '22:00',
+    '22:30',
+    '23:00',
   ];
 
   const nums = new Set();

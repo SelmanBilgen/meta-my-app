@@ -1,5 +1,7 @@
 nav {
   background-color: #fff;
+  position: sticky;
+  top: 0;
 }
 .nav-frame {
   display: flex;
@@ -18,16 +20,16 @@ nav {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  font-family: "Karla";
+  font-family: 'Karla';
   font-size: 1rem;
   font-weight: 550;
   list-style: none;
   text-decoration: none;
-  text-shadow: 1px 1px 2px rgb(146, 143, 143);
+  /*text-shadow: 1px 1px 2px rgb(146, 143, 143);*/
 }
 
 .nav-ul > a {
-  font-family: "Karla";
+  font-family: 'Karla';
   font-size: 1rem;
   font-weight: 550;
   list-style: none;
@@ -36,7 +38,7 @@ nav {
 }
 
 .nav-ul > a::after {
-  content: "";
+  content: '';
   display: block;
   width: 0px;
   height: 2px;
@@ -72,16 +74,17 @@ nav {
     margin-top: 1rem;
     align-items: center;
     gap: 1rem;
-    font-family: "Karla";
+    font-family: 'Karla';
     font-size: 1rem;
     font-weight: 550;
     list-style: none;
     text-decoration: none;
-    text-shadow: 1px 1px 2px rgb(146, 143, 143);
+    /*text-shadow: 1px 1px 2px rgb(146, 143, 143);*/
     background-color: white;
+    border-radius: 0 0 5px 5px;
   }
   .nav-ul > a::after {
-    content: " ";
+    content: ' ';
     display: block;
     width: 0px;
     height: 2px;

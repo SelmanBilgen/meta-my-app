@@ -1,6 +1,6 @@
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
-import RoutesAll from "./components/RoutesAll";
+import Nav from './components/NavBar/Nav';
+import Footer from './components/Footer/Footer';
+import RoutesAll from './components/RoutesAll';
 
 function App() {
   return (
