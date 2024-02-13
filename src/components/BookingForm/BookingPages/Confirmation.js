@@ -9,21 +9,20 @@ function Confirmation({ values }) {
     <div className='confirmation'>
       <div className='confirmation-container'>
         <br />
-        <h3>
+        <p style={{ display:'inline-block' , margin:'0'}}>
           {values.firstName} {values.lastName}
-        </h3>{' '}
-        <h3 style={{ color: '#f4ce14' }}>
-          Your reservation has been confirmed.
-        </h3>
-        <h3 style={{ color: '#f4ce14' }}>
+        </p>
+        <p style={{ display:'inline' }}>'s reservation has been confirmed.
+        </p>
+        <p style={{  marginTop:'2rem' , marginBottom:'0'}}>
           A confirmation email has been sent to:
-        </h3>
-        <h3>{values.email}</h3>
-        <h3 style={{ color: '#f4ce14' }}>Your reservation is on:</h3>
-        <h3>
+        </p>
+        <p style={{display:'inline-block' }}>{values.email}</p>
+        <p >Your reservation is on:</p>
+        <p >
           {new Date(correctedDate).toDateString()}
           {' - '} {values.time}
-        </h3>
+        </p>
       </div>
     </div>
   );

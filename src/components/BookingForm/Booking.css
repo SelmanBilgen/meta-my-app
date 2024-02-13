@@ -1,5 +1,5 @@
 .reservations {
-  min-height: 770px;
+  min-height: 38rem;
   background-color: #495e57;
   padding-top: 1rem;
 }
@@ -142,7 +142,7 @@ select {
 }
 
 .form-body {
-  min-height: 550px;
+  min-height: 27rem;
 }
 
 .confirmation-container {
@@ -155,6 +155,9 @@ span {
   padding: 3px;
   color: red;
   max-width: 12rem;
+  display: block;
+}
+.hidden {
   display: none;
 }
 p {

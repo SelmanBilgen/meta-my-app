@@ -50,6 +50,7 @@
 .footer-contact {
   margin-top: 0;
   padding: 1.5rem;
+  max-width: 9rem;
 }
 
 .footer-contact h1,

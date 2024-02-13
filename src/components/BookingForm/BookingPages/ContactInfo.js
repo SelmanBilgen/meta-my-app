@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../Booking.css';
 
 function ContactInfo({
@@ -8,6 +8,9 @@ function ContactInfo({
   focused,
   handleFocus,
   handleFocusCheckbox,
+  handleBlur,
+  val,
+  
 }) {
   return (
     <div className='contact-info'>
@@ -22,15 +25,22 @@ function ContactInfo({
               id='firstName'
               value={values.firstName}
               onChange={handleChange}
-              onBlur={handleFocus}
-              focused={focused.firstName.toString()}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              //focused={focused.firstName.toString()}
               pattern='^[A-Za-z0-9]{3,16}$'
               required={true}
             />
-            <span>
+              {val.firstName === true |  val.firstName === null | (val.firstName === false && focused.firstName <= 1 )  ? (
+          ''
+        ) :(
+          <span role='alert' >First name should be 3-16 characters and shouldn't include any special character!</span>
+          
+        )}
+            {/* <span className={focused && val.firstName | val.firstName === null  ? 'hidden' : 'show'}>
               First name should be 3-16 characters and shouldn't include any
               special character!
-            </span>
+            </span> */}
           </label>
 
           <label>
@@ -41,15 +51,19 @@ function ContactInfo({
               id='lastName'
               value={values.lastName}
               onChange={handleChange}
-              onBlur={handleFocus}
-              focused={focused.lastName.toString()}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+                            //focused={focused.lastName.toString()}
               pattern='^[A-Za-z0-9]{3,16}$'
               required={true}
             />
-            <span>
+            {val.lastName === true |  val.lastName === null | (val.lastName === false && focused.lastName <= 1 )  ? (
+          ''
+        ) : (
+            <span role='alert'>
               Last name should be 3-16 characters and shouldn't include any
-              special character!
-            </span>
+              special character
+            </span>)}
           </label>
         </div>
         <div className='email-container'>
@@ -60,14 +74,18 @@ function ContactInfo({
               name='email'
               id='email'
               className='email'
-              value={values.email}
+              //value={values.email}
               onChange={handleChange}
-              onBlur={handleFocus}
-              focused={focused.email.toString()}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              //focused={focused.email.toString()}
               autoComplete='on'
               required={true}
             />
-            <span>Email should be a valid email address.</span>
+            {val.email === true |  val.email === null | (val.email === false && focused.email <= 1 )  ? (
+          ''
+        ) : (
+            <span role='alert'>Email should be a valid email address.</span>)}
           </label>
         </div>
         <div className='phone-number-container'>
@@ -78,15 +96,19 @@ function ContactInfo({
               name='phone'
               id='phone'
               placeholder='123-456-7890'
-              value={values.phone}
+              //value={values.phone}
               onChange={handleChange}
-              onBlur={handleFocus}
-              focused={focused.phone.toString()}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              //focused={focused.phone.toString()}
               autoComplete='on'
               pattern='^(?!123-456-7890)[0-9]{3}-[0-9]{3}-[0-9]{4}$'
               required={true}
             />
-            <span>Phone number should match the format!</span>
+            {val.phone === true |  val.phone === null | (val.phone === false && focused.phone <= 1 ) ? (
+          ''
+        ) : (
+            <span role='alert'>Phone number should match the format!</span>)}
           </label>
         </div>
         <div className='textarea-container'>
@@ -97,7 +119,7 @@ function ContactInfo({
             name='request'
             id='request'
             rows='4'
-            value={values.request}
+            //value={values.request}
             onChange={handleChange}
           ></textarea>
         </div>
@@ -107,10 +129,10 @@ function ContactInfo({
             type='checkbox'
             name='policy'
             id='policy'
-            value={values.policy}
+            //value={values.policy}
             onChange={handleCheckbox}
             onBlur={handleFocusCheckbox}
-            focused={focused.policy.toString()}
+            //focused={focused.policy.toString()}
             pattern="$('div.checkbox-group.required :checkbox:checked').length > 0"
             required={true}
             checked={values.policy}
@@ -121,11 +143,11 @@ function ContactInfo({
           </label>
         </div>
         {!values.policy ? (
-          <p style={{ color: 'red' }}>
+          <p style={{ color: 'red', fontSize:"12px" }}>
             Little Lemon’s Reservation Policy should be checked.
           </p>
         ) : (
-          <span>*</span>
+          <span></span>
         )}
       </div>
     </div>

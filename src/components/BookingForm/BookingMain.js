@@ -42,15 +42,18 @@ const BookingMain = () => {
   });
 
   const [val, setVal] = useState({
-    firstName: false,
-    lastName: false,
-    email: false,
-    phone: false,
+    firstName: null,
+    lastName: null,
+    email: null,
+    phone: null,
   });
 
+  const [checked, setChecked] = useState({
+    policy: true,})
+
   const handleChange = (e) => {
-    setValues({ ...values, [e.target.id]: e.target.value });
-    setVal({ ...val, [e.target.name]: e.target.validity.valid });
+    setValues({ ...values, [e.target.name]: e.target.value });
+    setVal({ ...val, [e.target.name]: e.target.validity.valid })
   };
 
   const handleCheckbox = (e) => {
@@ -61,12 +64,29 @@ const BookingMain = () => {
     setValues({ ...values, [e.target.name]: e.target.value });
     dispatch({ type: 'new_times' });
   };
+const handleBlur = (e) => {
+  //setFocused({ ...focused, [e.target.name]: false });
+  setFocused({ ...focused, [e.target.name]: ++focused[e.target.name] });
+  setVal({ ...val, [e.target.name]: e.target.validity.valid })}
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(JSON.stringify(values));
   };
-
+  const [focused, setFocused] = useState({
+    firstName: 0,
+    lastName: 0,
+    email: 0,
+    phone: 0,
+  });
+  const handleFocus = (e) => {
+    setFocused({ ...focused, [e.target.name]: ++focused[e.target.name] });
+    setVal({ ...val, [e.target.name]: e.target.validity.valid });
+  };
+  const handleFocusCheckbox = (e) => {
+    setChecked({ ...checked, [e.target.name]: e.target.checked });
+  };
   // const [fname, SetFname] = useState('');
   // const handleFname = (e) => SetFname(e.target.value);
 
@@ -80,6 +100,11 @@ const BookingMain = () => {
       handleSubmit={handleSubmit}
       handleCheckbox={handleCheckbox}
       val={val}
+      focused={focused}
+      handleFocus={handleFocus}
+      handleFocusCheckbox={handleFocusCheckbox}
+      handleBlur={handleBlur}
+      checked={checked}
     />
   );
 };

@@ -13,28 +13,18 @@ function BookingForm({
   handleDateChange,
   handleSubmit,
   handleCheckbox,
-  val,
+  handleFocus,
+  focused,
   fname,
   handleFname,
+  handleFocusCheckbox,
+  handleBlur,
+  val,
+  checked,
 }) {
   const [page, setPage] = useState(0);
   const formTitle = ['Find a Table', 'Contact Information', 'Confirmation'];
-
-  const [focused, setFocused] = useState({
-    firstName: false,
-    lastName: false,
-    email: false,
-    phone: false,
-    policy: true,
-  });
-
-  const handleFocus = (e) => {
-    setFocused({ ...focused, [e.target.name]: true });
-  };
-
-  const handleFocusCheckbox = (e) => {
-    setFocused({ ...focused, [e.target.name]: e.target.checked });
-  };
+  
   const pageHandle = () => {
     if (page === 0) {
       return (
@@ -59,6 +49,8 @@ function BookingForm({
           handleFocusCheckbox={handleFocusCheckbox}
           fname={fname}
           handleFname={handleFname}
+          val={val}
+          handleBlur={handleBlur}
         />
       );
     } else if (page === 2) {
@@ -69,6 +61,8 @@ function BookingForm({
   function navigateHome() {
     return navigate('/');
   }
+
+
 
   return (
     <div className='form'>
@@ -106,8 +100,11 @@ function BookingForm({
                   (val.firstName === false) |
                     (val.lastName === false) |
                     (val.email === false) |
-                    (val.phone === false) |
-                    (values.policy === false)
+                    (val.phone === false) |(val.firstName === null) |
+                    (val.lastName === null) |
+                    (val.email === null) |
+                    (val.phone === null) |
+                    (checked.policy === false)
                 }
               >
                 {page === formTitle.length - 2 ? 'Submit' : 'Next'}
