@@ -180,7 +180,7 @@ table {
   //margin-left: .2rem;
   font-family: Karla;
   font-size: 1rem;
-  padding: 1rem
+  //padding: 1rem
 }
 .headerTable {
   background: #f8f7f7;
@@ -225,7 +225,7 @@ table {
   .phone-number-container,
   .email-container,
   .policy-input-container,
-  .textarea-container {
+  .textarea-container, .ticketTable {
     margin-left: 1rem;
   }
 
