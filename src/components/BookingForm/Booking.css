@@ -57,12 +57,13 @@ select {
   display: block;
 }
 .email {
-  width: 300px;
+  width: 18.75rem;
+
 }
 
 .select-occasion,
 .select-seating {
-  width: 130px;
+  width: 10.1rem;
   height: 2.5rem;
   margin: 5px 0;
   padding: 0.5rem;
@@ -143,6 +144,7 @@ select {
 
 .form-body {
   min-height: 27rem;
+  padding-right: 1rem;
 }
 
 .confirmation-container {
@@ -175,24 +177,26 @@ input:invalid[focused='true'] ~ span {
   width: 100%;
 }
 table {
-  margin-left: 0.2rem;
+  //margin-left: .2rem;
   font-family: Karla;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  padding: 1rem
 }
 .headerTable {
   background: #f8f7f7;
   color: #000000;
-  width: 5rem;
+  width: 7rem;
   text-align: left;
   padding: 0.3rem;
   font-weight: 500;
 }
 .dataTable {
   background: #fff;
-  width: 8rem;
+  width: 9.5rem;
   text-align: left;
-  padding-left: 0.5rem;
+  padding-left: 2rem;
   text-transform: capitalize;
+
 }
 
 .leftCorner {
@@ -207,6 +211,8 @@ table {
 .bottomRight {
   border-radius: 0 0 6px 0;
 }
+
+
 
 @media (max-width: 850px) {
   .email-container {
@@ -242,11 +248,22 @@ table {
   }
 }
 @media (max-width: 485px) {
+  .contact-name-container,
+.email-container,
+.phone-number-container,
+.textarea-container,
+.policy-input-container  {
+    width: calc(100%-1rem);
+  }
+  .email, .firstName, .lastName, .phone {
+    width: 90%;
+  }
   .reservations {
     min-height: 850px;
   }
 }
 @media (max-width: 360px) {
+ 
   .form-footer {
     flex-wrap: wrap;
     padding-bottom: 2rem;

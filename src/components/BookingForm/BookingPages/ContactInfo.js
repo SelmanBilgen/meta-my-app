@@ -11,7 +11,9 @@ function ContactInfo({
   handleBlur,
   val,
   
-}) {
+}) 
+
+{
   return (
     <div className='contact-info'>
       <div className='contact-info-container'>
@@ -19,6 +21,7 @@ function ContactInfo({
           <label>
             First name
             <input
+              className='firstName'
               data-testid='first-name'
               type='text'
               name='firstName'
@@ -27,7 +30,6 @@ function ContactInfo({
               onChange={handleChange}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              //focused={focused.firstName.toString()}
               pattern='^[A-Za-z0-9]{3,16}$'
               required={true}
             />
@@ -37,15 +39,11 @@ function ContactInfo({
           <span role='alert' >First name should be 3-16 characters and shouldn't include any special character!</span>
           
         )}
-            {/* <span className={focused && val.firstName | val.firstName === null  ? 'hidden' : 'show'}>
-              First name should be 3-16 characters and shouldn't include any
-              special character!
-            </span> */}
           </label>
-
           <label>
             Last name
             <input
+              className='lastName'
               type='text'
               name='lastName'
               id='lastName'
@@ -53,7 +51,6 @@ function ContactInfo({
               onChange={handleChange}
               onFocus={handleFocus}
               onBlur={handleBlur}
-                            //focused={focused.lastName.toString()}
               pattern='^[A-Za-z0-9]{3,16}$'
               required={true}
             />
@@ -74,11 +71,9 @@ function ContactInfo({
               name='email'
               id='email'
               className='email'
-              //value={values.email}
               onChange={handleChange}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              //focused={focused.email.toString()}
               autoComplete='on'
               required={true}
             />
@@ -92,15 +87,14 @@ function ContactInfo({
           <label>
             Phone number
             <input
+              className='phone'
               type='tel'
               name='phone'
               id='phone'
               placeholder='123-456-7890'
-              //value={values.phone}
               onChange={handleChange}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              //focused={focused.phone.toString()}
               autoComplete='on'
               pattern='^(?!123-456-7890)[0-9]{3}-[0-9]{3}-[0-9]{4}$'
               required={true}
@@ -119,7 +113,6 @@ function ContactInfo({
             name='request'
             id='request'
             rows='4'
-            //value={values.request}
             onChange={handleChange}
           ></textarea>
         </div>
@@ -129,10 +122,8 @@ function ContactInfo({
             type='checkbox'
             name='policy'
             id='policy'
-            //value={values.policy}
             onChange={handleCheckbox}
             onBlur={handleFocusCheckbox}
-            //focused={focused.policy.toString()}
             pattern="$('div.checkbox-group.required :checkbox:checked').length > 0"
             required={true}
             checked={values.policy}

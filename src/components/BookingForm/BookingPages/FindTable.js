@@ -13,7 +13,7 @@ function FindTable({
   correctedDate.setDate(today.getDate() + 1);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
       <div className='reservations-container'>
         <div className='inputs-container1'>
           <div className='party-input'>
@@ -129,7 +129,7 @@ function FindTable({
           </tbody>
         </table>
       </div>
-    </form>
+      </div>
   );
 }
 

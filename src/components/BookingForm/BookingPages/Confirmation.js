@@ -23,6 +23,7 @@ function Confirmation({ values }) {
           {new Date(correctedDate).toDateString()}
           {' - '} {values.time}
         </p>
+        
       </div>
     </div>
   );

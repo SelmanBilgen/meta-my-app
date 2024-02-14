@@ -40,9 +40,15 @@ const Footer = () => {
         </section>
         <section className='footer-socials'>
           <h1>Social Media Links</h1>
+          <Link to='https://www.facebook.com' target="_blank">
           <p className='facebook'>Facebook</p>
-          <p className='twitter'>Twitter</p>
+          </Link>
+          <Link to='https://www.twitter.com' target="_blank"> 
+          <p className='twitter' >Twitter</p>
+          </Link>
+          <Link to='https://www.instagram.com' target="_blank">
           <p className='instagram'>Instagram</p>
+          </Link>
         </section>
       </section>
     </div>

@@ -11,20 +11,22 @@ const Nav = () => {
 
   const handleCheckboxBurger = () => {
     setMobile((current) => !current);
-    //setMobile({ ...mobile, [e.target.name]: e.target.checked });
   };
   return (
     <nav>
       <div className='nav-frame'>
         <Link className='nav' to='/'>
-          <img className='nav-logo' src={Logo} alt='logo'></img>
+          <img className='nav-logo' src={Logo} alt='navigation little lemon logo'></img>
         </Link>
         <div className='normal'>
           <Navlinks />
         </div>
-        <div className='burgerContainer'>
+        <div  className='burgerContainer'>
           {mobile ? (
             <FontAwesomeIcon
+             aria-hidden="false"
+              aria-label='Menu'
+              title='Menu'
               className='faIcon'
               icon={faBars}
               style={{ color: 'black', cursor: 'pointer' }}
@@ -34,6 +36,8 @@ const Nav = () => {
           ) : (
             <>
               <FontAwesomeIcon
+                aria-hidden="false"
+                aria-label='Close button'
                 className='faIcon'
                 icon={faTimes}
                 style={{ color: 'black', cursor: 'pointer' }}

@@ -16,7 +16,7 @@ const RoutesAll = () => {
       <Route path='/about' element={<About />}>
         About
       </Route>
-      <Route path='/menu' element={<Menu />}>
+      <Route path='menu' element={<Menu />}>
         Menu
       </Route>
       <Route path='/order-online' element={<OrderOnline />}>

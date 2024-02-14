@@ -11,12 +11,9 @@ function BookingForm({
   myDate,
   availableTimes,
   handleDateChange,
-  handleSubmit,
   handleCheckbox,
   handleFocus,
   focused,
-  fname,
-  handleFname,
   handleFocusCheckbox,
   handleBlur,
   val,
@@ -25,12 +22,17 @@ function BookingForm({
   const [page, setPage] = useState(0);
   const formTitle = ['Find a Table', 'Contact Information', 'Confirmation'];
   
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setPage(page+1);
+    console.log("FormData is "
+    + JSON.stringify(values));
+  };
   const pageHandle = () => {
     if (page === 0) {
       return (
         <FindTable
           values={values}
-          // value={value}
           handleChange={handleChange}
           myDate={myDate}
           availableTimes={availableTimes}
@@ -47,8 +49,6 @@ function BookingForm({
           focused={focused}
           handleFocus={handleFocus}
           handleFocusCheckbox={handleFocusCheckbox}
-          fname={fname}
-          handleFname={handleFname}
           val={val}
           handleBlur={handleBlur}
         />
@@ -65,20 +65,23 @@ function BookingForm({
 
 
   return (
+    
+    <form onSubmit={handleSubmit}>
     <div className='form'>
-      {/* <div className="progress-bar"></div> */}
       <div className='reservations'>
         <div className='reservations-container'>
           <h1>{formTitle[page]}</h1>
           <div className='form-body'>{pageHandle()}</div>
-          {page === 2 ? (
-            <div className='form-footer-done'>
-              <button className='form-btn' onClick={navigateHome}>
+          <div className='form-footer'>
+          <div className='form-footer1'>
+
+           {page === 2 ? (
+              <button type='button' className='form-btn' onClick={navigateHome}>
                 Done
               </button>
-            </div>
+            
           ) : (
-            <div className='form-footer'>
+            
               <button
                 className='form-btn'
                 disabled={page === 0}
@@ -86,7 +89,12 @@ function BookingForm({
               >
                 Previous
               </button>
+              )}
+              </div>
+            <div className='form-footer2'>
+              {page === 0 ? (
               <button
+              type='submit'
                 className='form-btn'
                 onClick={() => {
                   if (page === formTitle.length - 2) {
@@ -95,25 +103,33 @@ function BookingForm({
                     setPage((currentPage) => currentPage + 1);
                   }
                 }}
-                disabled={
-                  page === 1 &&
-                  (val.firstName === false) |
-                    (val.lastName === false) |
-                    (val.email === false) |
-                    (val.phone === false) |(val.firstName === null) |
-                    (val.lastName === null) |
-                    (val.email === null) |
-                    (val.phone === null) |
-                    (checked.policy === false)
-                }
               >
-                {page === formTitle.length - 2 ? 'Submit' : 'Next'}
+                Next
               </button>
+              ):("")}
+              {page === 1 ? 
+              (<button
+              type='submit'
+              onSubmit={handleSubmit}
+              className='form-btn'
+              disabled={
+                page === 1 &&
+                (val.firstName === false) |
+                  (val.lastName === false) |
+                  (val.email === false) |
+                  (val.phone === false) |(val.firstName === null) |
+                  (val.lastName === null) |
+                  (val.email === null) |
+                  (val.phone === null) |
+                  (checked.policy === false)
+                }>Submit</button> ):('')}
+              </div>
             </div>
-          )}
+          
         </div>
       </div>
     </div>
+    </form>
   );
 }
 

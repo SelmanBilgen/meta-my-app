@@ -40,12 +40,18 @@
 
 .food-card1 {
   font: #000;
-  width: 263px;
+  width: 255px;
   height: 432px;
   border-radius: 1rem 1rem 0 0;
   background: #efeded;
   margin: auto;
   margin-bottom: 1rem;
+  
+}
+.food-card1:hover {
+  transform: translate3D(0,-1px,0) scale(1.03);
+  box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+  transition: all .4s ease;
 }
 
 .card-article {
@@ -103,6 +109,15 @@
   align-items: center;
   flex-wrap: wrap;
 }
+
+.food-card1 > img { 
+  max-width:100%;
+    max-height:100%;
+    vertical-align: middle;
+  overflow: hidden;
+  }
+
+ 
 
 /* Testimonials */
 
@@ -204,6 +219,11 @@
   z-index: 1;
   top: 120px;
   right: 160px;
+}
+//Menu Page
+
+.menu-main-specials  > #specials{
+  background-color: blue;
 }
 
 @media (max-width: 905px) {

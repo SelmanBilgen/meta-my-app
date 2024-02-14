@@ -65,15 +65,9 @@ const BookingMain = () => {
     dispatch({ type: 'new_times' });
   };
 const handleBlur = (e) => {
-  //setFocused({ ...focused, [e.target.name]: false });
   setFocused({ ...focused, [e.target.name]: ++focused[e.target.name] });
   setVal({ ...val, [e.target.name]: e.target.validity.valid })}
 
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(JSON.stringify(values));
-  };
   const [focused, setFocused] = useState({
     firstName: 0,
     lastName: 0,
@@ -87,9 +81,7 @@ const handleBlur = (e) => {
   const handleFocusCheckbox = (e) => {
     setChecked({ ...checked, [e.target.name]: e.target.checked });
   };
-  // const [fname, SetFname] = useState('');
-  // const handleFname = (e) => SetFname(e.target.value);
-
+  
   return (
     <BookingForm
       values={values}
@@ -97,7 +89,6 @@ const handleBlur = (e) => {
       availableTimes={availableTimes}
       myDate={myDate}
       handleDateChange={handleDateChange}
-      handleSubmit={handleSubmit}
       handleCheckbox={handleCheckbox}
       val={val}
       focused={focused}

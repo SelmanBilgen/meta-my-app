@@ -8,7 +8,7 @@ import moped from '../../assets/Order-for-delivery.svg';
 
 const MainSpecials = () => {
   return (
-    <div className='specials-container'>
+    <div className='specials-container' id='specials'>
       <section className='specials'>
         <div className='main-header'>
           <h1 className='specials-title'>Specials</h1>
@@ -18,7 +18,9 @@ const MainSpecials = () => {
         </div>
         <div className='food-cards'>
           <div className='food-card1'>
+            
             <img src={greekSalad} alt='greek salad' />
+            
             <div className='card-article'>
               <div className='card-heading'>
                 <h1 className='card-h1'>Greek Salad</h1>
