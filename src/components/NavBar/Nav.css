@@ -2,6 +2,7 @@ nav {
   background-color: #fff;
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 .nav-frame {
   display: flex;
