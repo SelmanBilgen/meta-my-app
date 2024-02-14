@@ -3,7 +3,7 @@ import './Booking.css';
 import { useState } from 'react';
 import BookingForm from './BookingForm';
 import { useReducer } from 'react';
-import { fetchAPI } from './fakeAPI';
+import { fetchAPI } from './API';
 
 const updateTimes = (availableTimes, action) => {
   const newTimes = fetchAPI();
